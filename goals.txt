@@ -1,0 +1,90 @@
+Non-Code: -------------------------------------------------------------------------------------------------------------
+
+- create a basic UI for your smart object, within a single view and using simple controls and visual elements.  
+- address a subset of the design requirements through basic features to input simple settings for the smart object
+- view simple status data- which may be static
+
+gather design requirements: 
+- interview 3 people outside the class (family, friends) about your smart object.  
+  revise the questions you developed in your teams, aiming to learn about your user's needs and how your UI can address them.  
+  Report what you learned from these interviews.
+- Write down the assumptions you are making about your smart object (e.g., for a smart water bottle, perhaps it measures the water level and temperature, it tracks how much water someone drinks through a sensor in the opening....)
+  Create a written list of design requirements for the user interface.  
+  You can begin with the design goals you generated in class. You can address some of these in your implementation or leave some as 'future work', outside the scope of the class. 
+- Choose 3 interesting design challenges to explore.     
+  For instance, if I were developing a microwave+toaster oven combo device, my design challenges might be- user wants to figure out how long to cook something for and in what mode, user wants to be able to quickly heat up foods they repeatedly heat up, user wants to avoid over or under cooking their food. 
+  We will follow a protocol for exploring design alternatives called '10-plus-10'.  See in-class notes
+  If you are having trouble generating 10-plus-10 sketches, try sketching 10-plus-10 MINUTES. 
+  Sketch design alternatives for 10 minutes, select from these alternatives and sketch variations on these for 10 minutes.  
+
+
+C-Goals: -------------------------------------------------------------------------------------------------------------
+
+- begin with the requirements you captured above, and focus on basic controls and usage first. 
+  Create a list of the controls you are including in this UI, the indicators you want display, and how these connect to the design goals you captured.  
+    For example, if this were a microwave/toaster oven project, a C-level implement may include :
+        Controls: ability to set a timer, ability to select heating mode (e.g. bake / broil / toast / bagel / pizza / convection bake), ability to start the oven 
+        Display: display the temperature, time and heating mode the user has set; display the current temperature inside the oven (non-updating); display the number of times the user has run the oven that day- increments by one when they start the oven
+        Design choices: Users need to be able to see the food inside.  Controls will be clustered by major activity. 
+- Create prototype sketches of this interface BEFORE you implement it. Include these sketches in your documentation
+  Show your prototype sketches to 3 people (friends, family members, classmates).  Record the feedback. 
+    You don't need to follow an evaluation methodology here, as we have not yet covered this in class, but get some feedback.  
+- Create an interactive application using Javascript with React. A portion of your application will be the mock-UI.  
+  A portion will be project information and relevant controls for testing your UI and displaying its features. 
+  Outside of the mock-UI include: 
+    A title for the project, your name and a link to your project write up.
+    A small graphic to indicate where this UI would reside on the physical smart object.
+- Implement the basic interface goals (as described above).
+- Implementation principles:
+  - Consider visual design principles in your design
+  - Provide appropriate feedback for interactions.  
+  - Elements should be clearly laid out. Your interface for the smart object should have fixed dimensions 
+    (non-resizing, non-responsive layout) with size and aspect ratio that is appropriate for your object. 
+    For instance, suppose you were implementing a smart water bottle, it might have a front and back UI, in two sections 
+    on your page, with an appropriate aspect ratio for a water bottle (eg. tall and narrow, or wide if it wraps continuously around the display).   
+  - Clearly indicate where the boundaries on UI for the smart object- in one or several regions.  
+
+B-Goals: -------------------------------------------------------------------------------------------------------------
+
+Pick one of the following design directions.  Choose one that interests you, or that is a good fit for your smart object.  
+
+For the one you choose: Use sketching- exploring design alternatives, sketching the interface- to think visually before you code.  
+  Gather feedback on sketched interface design. Include these sketches in your documentation
+
+1. Enable the user to input a complex set of selections: 
+    The basic interface you implemented for the C-goals may not allow for more complex inputs or user selections.  
+    Design and implement the user interface that will enable your user to input these selections.
+    Ensure that they can see their selections clearly, have quick feedback on their selections. 
+    Example: For instance, if you were implementing a smart shower, perhaps you need a sequence of shower temperatures 
+        and nozzle settings, with timings, something that is more complex than simple selection within a single menu.  
+
+2. Connecting to a mock secondary device.
+    If one of your design goals involved integrating a secondary device- like a mobile phone or a watch- 
+    include a region on your page which will display an interactive UI of the mobile device. 
+    Examples: For instance, perhaps you have a mock-UI for shopping list creation on your phone, which you can load onto your smart shopping cart UI.  
+        Interactive inputs within the mock mobile device UI, should update the smart object, and vice versa. 
+        Clearly define in your write-up what the role of the secondary device is, with respect to your smart object. Why have a secondary device?  
+
+3. Display information for different mock users or situations: 
+    Go deeper than you did for the C-goals, to display captured information from sensors in the smart device to the user.  
+    You do not need to include complex visualizations here, but consider how would you display information captured by sensors to your users? Sketch design alternatives.   
+    Examples:  Suppose you were developing a smart toilet, and were tracking health-related data.  How would this be visually presented to the user? 
+        Suppose you were developing the UI to a smart shopping cart, if the user has added 10 items to their cart how would you help them see what 
+        categories their products are in and how much they cost? 
+    Within your UI, display basic indicators of the captured data for at least 4 different model users or example situations. Create these profiles as json files or as objects. You can include buttons outside of the smart-object UI to switch between these data profiles.
+
+4. Simulate the smart object in use over a time frame:
+    If your smart object changes its behavior over time (such as a programmable sequence of events, or events that change as the user 
+        engages with it over time), simulate these changes.  There should be a button to activate this simulation- either on your UI or outside it, as appropriate. 
+    Example 1: Suppose you were implementing a smart shopping cart.  You can't push your UI around a real grocery store. 
+        But, if one of your design goals is to highlight where you are in the store, or show coupons for the products near the shopping cart, 
+        can you simulate this behavior, in a very simplified store?
+    Example 2: Suppose you have a programmable shower program- you can include interactions or controls to activate this program, and then show a 
+        real-time (or accelerated) version, of how the UI changes as it runs the program. All visual indicators or visual elements should update dynamically as you run your simulation. 
+    Example 3: For something like the smart water bottle, this might be a simulation of someone drinking water occasionally 
+        throughout a simulated period of time, updating the display of how much water they are drinking. You can use a timer and can pre-script the program, to control how the object should change.
+
+
+A-Goals: -------------------------------------------------------------------------------------------------------------
+
+Complete a second design direction from the above list for the B-goals.  Include sketches and feedback from others, as in the B-goals. 
