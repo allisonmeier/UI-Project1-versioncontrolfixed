@@ -7,10 +7,10 @@
 .RecipeDisplay,
 .UserProfiles {
     flex-grow: 1;
-    min-width: 0; /* Allow shrinking beyond intrinsic width */
-    border: 1px solid #ccc; /* Add border for visualization */
-    padding: 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
+    min-width: 0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
 * {

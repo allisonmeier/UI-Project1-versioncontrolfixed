@@ -66,6 +66,55 @@ export const userProfiles = {
     },
 }
 
+export const allPossibleIngredients = [
+    "baking powder",
+    "baking soda",
+    "bay leaf",
+    "beef stock",
+    "black pepper",
+    "brown lentils",
+    "butter",
+    "canned tomatoes",
+    "carrots",
+    "celery",
+    "chickpeas",
+    "chicken thighs",
+    "chocolate chips",
+    "cumin",
+    "dried oregano",
+    "garlic",
+    "garlic powder",
+    "ginger",
+    "gruyere cheese",
+    "ground beef",
+    "ice water",
+    "italian seasoning",
+    "kale",
+    "lemon juice",
+    "milk",
+    "olive oil",
+    "onion",
+    "onion powder",
+    "paprika",
+    "parsley",
+    "plant-based milk",
+    "red wine",
+    "rice",
+    "ripe bananas",
+    "salt",
+    "sesame oil",
+    "sesame seeds",
+    "sourdough",
+    "spaghetti",
+    "sugar",
+    "thyme",
+    "tomato paste",
+    "vanilla extract",
+    "vegetable broth",
+    "vegetable oil",
+    "vegetables (bell peppers, broccoli, carrots, etc.)",
+    "worcestershire sauce"
+]
 
 export const dummyRecipes = [
     /* French Onion Soup */
@@ -107,7 +156,7 @@ export const dummyRecipes = [
                 details: "thinly sliced"               
             },
             {
-                ingredient: "caster sugar",
+                ingredient: "sugar",
                 amount: 1,
                 measurement: "tsp",
                 details: ""               
@@ -293,7 +342,7 @@ export const dummyRecipes = [
                 details: ""
             },
             {
-                ingredient: "pepper",
+                ingredient: "black pepper",
                 amount: 1,
                 measurement: "tsp",
                 details: ""
@@ -618,7 +667,7 @@ export const dummyRecipes = [
                 details: ""
             },
             {
-                ingredient: "canned diced tomatoes",
+                ingredient: "canned tomatoes",
                 amount: 1,
                 measurement: "can",
                 details: ""
@@ -684,7 +733,7 @@ export const dummyRecipes = [
                 details: "mashed"
             },
             {
-                ingredient: "all-purpose flour",
+                ingredient: "flour",
                 amount: 2,
                 measurement: "cups",
                 details: ""
@@ -702,7 +751,7 @@ export const dummyRecipes = [
                 details: ""
             },
             {
-                ingredient: "plant-based milk (almond, soy, oat, etc.)",
+                ingredient: "plant-based milk",
                 amount: 0.5,
                 measurement: "cup",
                 details: ""
@@ -732,7 +781,7 @@ export const dummyRecipes = [
                 details: ""
             },
             {
-                ingredient: "chopped nuts or chocolate chips (optional)",
+                ingredient: "chocolate chips",
                 amount: null,
                 measurement: "",
                 details: ""
