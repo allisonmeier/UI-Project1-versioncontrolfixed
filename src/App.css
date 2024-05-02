@@ -1,0 +1,50 @@
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.TemperatureGauge,
+.RecipeDisplay,
+.UserProfiles {
+    flex-grow: 1;
+    min-width: 0; /* Allow shrinking beyond intrinsic width */
+    border: 1px solid #ccc; /* Add border for visualization */
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+  }
+
+* {
+    font-family: 'Roboto';
+}
+
+html, body {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* background color for the entire page */
+}
+
+.header {
+    background-color: #e0e0e0; /* Slightly darker than #f0f0f0 */
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-title {
+    font-size: 20px; 
+    margin: 10px 0;
+}
+
+.my-name {
+    font-size: 16px; 
+    margin: 10px 0;
+}
+
+.external-links p {
+    font-size: 12px; 
+    margin: 10px 0;
+}

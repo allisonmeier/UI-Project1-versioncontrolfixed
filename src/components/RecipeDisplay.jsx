@@ -1,7 +1,7 @@
-import "../index.css"
+import "../RecipeDisplay.css"
 import * as React from 'react'
 import { IconButton } from "@mui/material";
-import {dummyRecipes} from '../InfoExports'
+import {dummyRecipes, dietaryRestrictions} from '../InfoExports'
 
 class RecipeDisplay extends React.Component { 
     constructor(props) {
@@ -9,14 +9,7 @@ class RecipeDisplay extends React.Component {
         this.state = {
             currentRecipe: dummyRecipes[0],
             currentRecipeStep: 1,
-            /*scaleValue: 0,
-            scaleTrueValue: 0,
-            profileModalOpen: false,
-            notesModalOpen: false,
-            currentInstructionPos: 0,
-            currentInstruction: "",
-            currentInstructionScale: 0,
-            scaleState: 1*/
+            dietaryDescriptors: [],
         }
     }
 
@@ -98,54 +91,44 @@ class RecipeDisplay extends React.Component {
     //console.log(getFilteredRecipes())
 
     return (
-        <div>
-            <div className="recipe-container">
-                <div className="recipe-container-header">
-                    <p className='recipe-title'>
-                        {this.state.currentRecipe.title}
-                    </p>
-                    <p className='recipe-description'>
-                        <i>{this.state.currentRecipe.description}</i>
-                    </p>
-                    <div className='recipe-difficulty'>
-                        <div className='recipe-difficulty-stars'>
-                            {this.showDifficultyLevelStars()}
-                        </div>
-                    </div>
-                </div>
-
-                <div className="recipe-container-body">
-                    <p className='recipe-steps-subheader'>
-                        Steps: 
-                    </p>
-                    <ol className="recipe-steps" start={1}>
-                        {this.state.currentRecipe.steps.map((step, index) => (
-                            <li key={index} className={this.state.currentRecipeStep === index + 1 ? 'highlighted' : ''}>
-                                {step}
-                            </li>
-                        ))}
-                    </ol>
-                    <div className="recipe-step-navigation">
-                        <button onClick={this.handlePreviousRecipeStep}>
-                            &#8592;
-                        </button> {/* left arrow */}
-                        <span>
-                            Step {this.state.currentRecipeStep}
-                        </span>
-                        <button onClick={this.handleNextRecipeStep}>
-                            &#8594;
-                        </button> {/* right arrow */}
+        <div className="recipe-container">
+            <div className="recipe-container-header">
+                <p className='recipe-title'>
+                    {this.state.currentRecipe.title}
+                </p>
+                <p className='recipe-description'>
+                    <i>{this.state.currentRecipe.description}</i>
+                </p>
+                <div className='recipe-difficulty'>
+                    <div className='recipe-difficulty-stars'>
+                        {this.showDifficultyLevelStars()}
                     </div>
                 </div>
             </div>
 
-
-
-
-
-
-
-
+            <div className="recipe-container-body">
+                <p className='recipe-steps-subheader'>
+                    Steps: 
+                </p>
+                <ol className="recipe-steps" start={1}>
+                    {this.state.currentRecipe.steps.map((step, index) => (
+                        <li key={index} className={this.state.currentRecipeStep === index + 1 ? 'highlighted' : ''}>
+                            {step}
+                        </li>
+                    ))}
+                </ol>
+                <div className="recipe-step-navigation">
+                    <button onClick={this.handlePreviousRecipeStep}>
+                        &#8592;
+                    </button> {/* left arrow */}
+                    <span>
+                        Step {this.state.currentRecipeStep}
+                    </span>
+                    <button onClick={this.handleNextRecipeStep}>
+                        &#8594;
+                    </button> {/* right arrow */}
+                </div>
+            </div>
         </div>
     )
 

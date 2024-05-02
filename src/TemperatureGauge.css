@@ -1,0 +1,9 @@
+/* GENERAL */
+
+.temp-gauge-container {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black; 
+    padding: 30px;
+    margin: 10px;
+}

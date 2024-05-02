@@ -1,10 +1,79 @@
 
+export const dietaryRestrictions = [
+    "Vegan",
+    "Vegetarian",
+    "Dairy-Free",
+    "Gluten-Free",
+]
+
+
+export const basicTemperatures = [
+    {
+        value: 0,
+        label: '0°F'
+    },
+    {
+        value: 32,
+        label: '32°F'
+    },
+    {
+        value: 100,
+        label: '100°F'
+    },
+    {
+        value: 200,
+        label: '200°F'
+    },
+    {
+        value: 300,
+        label: '300°F'
+    },
+    {
+        value: 400,
+        label: '400°F'
+    },
+    {
+        value: 500,
+        label: '500°F'
+    }
+]
+
+
+export const userProfiles = {
+    user1: {
+        name: "Luke Bristoll",
+        dietaryRestrictions: [],
+        currentIngredients: [],
+        skillLevel: 'Easy',
+    },
+    user2: {
+        name: "Robbie Schad",
+        dietaryRestrictions: ["Dairy-free"],
+        currentIngredients: [],
+        skillLevel: 'Moderate',
+    },
+    user3: {
+        name: "Robin Heft",
+        dietaryRestrictions: ["Vegan", "Vegetarian"],
+        currentIngredients: [],
+        skillLevel: 'Moderate',
+    },
+    user4: {
+        name: "Steven Kraine",
+        dietaryRestrictions: ["Gluten-Free"],
+        currentIngredients: [],
+        skillLevel: 'Difficult',
+    },
+}
+
+
 export const dummyRecipes = [
     /* French Onion Soup */
     {
         title: "French Onion Soup",
         description: "A rich and savory soup featuring caramelized onions, beef stock, and melted gruyere cheese.",
         difficulty: "Difficult",
+        dietaryDescriptors: ["Dairy-Free"],
         durationInMinutes: 110,
         ingredientsNeeded: [
             {
@@ -93,6 +162,7 @@ export const dummyRecipes = [
         description: "Creamy and flavorful chickpea dip with hints of garlic, lemon, and tahini.",
         difficulty: "Moderate",
         durationInMinutes: 40,
+        dietaryDescriptors: ["Vegan", "Vegetarian", "Gluten-Free", "Dairy-Free"],
         ingredientsNeeded: [
             {
                 ingredient: "chickpeas",
@@ -184,6 +254,7 @@ export const dummyRecipes = [
         description: "Tender and juicy chicken thighs seasoned with garlic, onion, and Italian seasoning, baked to perfection.",
         difficulty: "Easy",
         durationInMinutes: 60,
+        dietaryDescriptors: [],
         ingredientsNeeded: [
             {
                 ingredient: "chicken thighs",
@@ -254,6 +325,7 @@ export const dummyRecipes = [
         description: "Irresistibly chewy cookies infused with chocolate chips and nutritious kale for a surprising twist.",
         difficulty: "Easy",
         durationInMinutes: 22,
+        dietaryDescriptors: ["Vegan", "Vegetarian", "Gluten-Free", "Dairy-Free"],
         ingredientsNeeded: [
             {
                 ingredient: "flour",
@@ -325,36 +397,363 @@ export const dummyRecipes = [
             "Roll into balls, and place onto cookie tray.",
             "Bake for 12 minutes, and let cool for 10 minutes to firm up texture."
         ]
+    },
+    /* Spag Bol */
+    {
+        title: "Spaghetti Bolognese",
+        description: "Classic Italian pasta dish with savory tomato sauce and ground beef.",
+        difficulty: "Moderate",
+        durationInMinutes: 60,
+        dietaryDescriptors: [],
+        ingredientsNeeded: [
+            {
+                ingredient: "spaghetti",
+                amount: 1,
+                measurement: "pound",
+                details: ""
+            },
+            {
+                ingredient: "ground beef",
+                amount: 1,
+                measurement: "pound",
+                details: ""
+            },
+            {
+                ingredient: "onion",
+                amount: 1,
+                measurement: "large",
+                details: "diced"
+            },
+            {
+                ingredient: "garlic",
+                amount: 3,
+                measurement: "cloves",
+                details: "minced"
+            },
+            {
+                ingredient: "canned tomatoes",
+                amount: 2,
+                measurement: "cups",
+                details: "crushed"
+            },
+            {
+                ingredient: "tomato paste",
+                amount: 2,
+                measurement: "tablespoons",
+                details: ""
+            },
+            {
+                ingredient: "red wine",
+                amount: 0.5,
+                measurement: "cup",
+                details: ""
+            },
+            {
+                ingredient: "olive oil",
+                amount: 2,
+                measurement: "tablespoons",
+                details: ""
+            },
+            {
+                ingredient: "dried oregano",
+                amount: 1,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "salt",
+                amount: 1,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "black pepper",
+                amount: 0.5,
+                measurement: "teaspoon",
+                details: ""
+            }
+        ],
+        suppliesNeeded: [
+            "large pot",
+            "skillet",
+            "wooden spoon",
+            "colander"
+        ],
+        steps: [
+            "Cook spaghetti according to package instructions until al dente. Drain and set aside.",
+            "In a skillet, heat olive oil over medium heat. Add onion and garlic, and cook until softened.",
+            "Add ground beef to the skillet and cook until browned. Drain excess fat if needed.",
+            "Stir in crushed tomatoes, tomato paste, red wine, oregano, salt, and pepper. Simmer for 20-30 minutes.",
+            "Serve sauce over cooked spaghetti. Enjoy!"
+        ],
+        notes: []
+    },
+    /* Chicken Stir Fry */
+    {
+        title: "Chicken Stir-Fry",
+        description: "Quick and easy Asian-inspired dish with tender chicken and colorful vegetables.",
+        difficulty: "Easy",
+        durationInMinutes: 30,
+        dietaryDescriptors: [],
+        ingredientsNeeded: [
+            {
+                ingredient: "chicken breast",
+                amount: 2,
+                measurement: "pieces",
+                details: "boneless, skinless, thinly sliced"
+            },
+            {
+                ingredient: "soy sauce",
+                amount: 3,
+                measurement: "tablespoons",
+                details: ""
+            },
+            {
+                ingredient: "sesame oil",
+                amount: 2,
+                measurement: "teaspoons",
+                details: ""
+            },
+            {
+                ingredient: "garlic",
+                amount: 2,
+                measurement: "cloves",
+                details: "minced"
+            },
+            {
+                ingredient: "ginger",
+                amount: 1,
+                measurement: "tablespoon",
+                details: "minced"
+            },
+            {
+                ingredient: "vegetables (bell peppers, broccoli, carrots, etc.)",
+                amount: 4,
+                measurement: "cups",
+                details: "sliced"
+            },
+            {
+                ingredient: "vegetable oil",
+                amount: 2,
+                measurement: "tablespoons",
+                details: ""
+            },
+            {
+                ingredient: "rice",
+                amount: 2,
+                measurement: "cups",
+                details: "cooked"
+            },
+            {
+                ingredient: "green onions",
+                amount: 2,
+                measurement: "stalks",
+                details: "sliced"
+            },
+            {
+                ingredient: "sesame seeds",
+                amount: 1,
+                measurement: "tablespoon",
+                details: ""
+            }
+        ],
+        suppliesNeeded: [
+            "wok or large skillet",
+            "spatula",
+            "cutting board",
+            "knife"
+        ],
+        steps: [
+            "In a bowl, marinate chicken slices with soy sauce and sesame oil. Let it sit for 15 minutes.",
+            "Heat vegetable oil in a wok or large skillet over medium-high heat. Add garlic and ginger, and cook until fragrant.",
+            "Add marinated chicken to the wok and stir-fry until cooked through. Remove chicken from the wok and set aside.",
+            "In the same wok, add more oil if needed and stir-fry vegetables until crisp-tender.",
+            "Return chicken to the wok and toss with vegetables. Cook for an additional 2-3 minutes.",
+            "Serve stir-fry over cooked rice. Garnish with sliced green onions and sesame seeds. Enjoy!"
+        ],
+        notes: []
+    },
+    /* Lentil Soup */
+    {
+        title: "Lentil Soup",
+        description: "Hearty and nutritious soup made with lentils, vegetables, and flavorful spices.",
+        difficulty: "Easy",
+        durationInMinutes: 45,
+        dietaryDescriptors: ["Vegan", "Vegetarian", "Gluten-Free", "Dairy-Free"],
+        ingredientsNeeded: [
+            {
+                ingredient: "brown lentils",
+                amount: 1,
+                measurement: "cup",
+                details: "rinsed"
+            },
+            {
+                ingredient: "carrots",
+                amount: 2,
+                measurement: "medium",
+                details: "diced"
+            },
+            {
+                ingredient: "celery",
+                amount: 2,
+                measurement: "stalks",
+                details: "diced"
+            },
+            {
+                ingredient: "onion",
+                amount: 1,
+                measurement: "large",
+                details: "diced"
+            },
+            {
+                ingredient: "garlic",
+                amount: 3,
+                measurement: "cloves",
+                details: "minced"
+            },
+            {
+                ingredient: "vegetable broth",
+                amount: 4,
+                measurement: "cups",
+                details: ""
+            },
+            {
+                ingredient: "canned diced tomatoes",
+                amount: 1,
+                measurement: "can",
+                details: ""
+            },
+            {
+                ingredient: "cumin",
+                amount: 1,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "paprika",
+                amount: 1,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "bay leaf",
+                amount: 1,
+                measurement: "piece",
+                details: ""
+            },
+            {
+                ingredient: "salt",
+                amount: 1,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "black pepper",
+                amount: 0.5,
+                measurement: "teaspoon",
+                details: ""
+            }
+        ],
+        suppliesNeeded: [
+            "large pot",
+            "wooden spoon",
+            "ladle",
+            "knife",
+            "cutting board"
+        ],
+        steps: [
+            "In a large pot, heat some olive oil over medium heat. Add onions, carrots, and celery. Cook until softened, about 5 minutes.",
+            "Add minced garlic, cumin, and paprika. Stir for another minute until fragrant.",
+            "Add lentils, diced tomatoes, vegetable broth, bay leaf, salt, and pepper. Bring to a boil, then reduce heat and simmer for 30 minutes or until lentils are tender.",
+            "Adjust seasoning to taste and remove bay leaf before serving."
+        ],
+        notes: []
+    },
+    /* Dairy-free Banana Bread */
+    {
+        title: "Dairy-Free Banana Bread",
+        description: "Moist and flavorful banana bread made without dairy products, perfect for a delicious breakfast or snack.",
+        difficulty: "Easy",
+        durationInMinutes: 60,
+        dietaryDescriptors: ["Vegan", "Dairy-Free"],
+        ingredientsNeeded: [
+            {
+                ingredient: "ripe bananas",
+                amount: 3,
+                measurement: "large",
+                details: "mashed"
+            },
+            {
+                ingredient: "all-purpose flour",
+                amount: 2,
+                measurement: "cups",
+                details: ""
+            },
+            {
+                ingredient: "granulated sugar",
+                amount: 0.75,
+                measurement: "cup",
+                details: ""
+            },
+            {
+                ingredient: "vegetable oil",
+                amount: 0.5,
+                measurement: "cup",
+                details: ""
+            },
+            {
+                ingredient: "plant-based milk (almond, soy, oat, etc.)",
+                amount: 0.5,
+                measurement: "cup",
+                details: ""
+            },
+            {
+                ingredient: "vanilla extract",
+                amount: 1,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "baking powder",
+                amount: 1,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "baking soda",
+                amount: 0.5,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "salt",
+                amount: 0.5,
+                measurement: "teaspoon",
+                details: ""
+            },
+            {
+                ingredient: "chopped nuts or chocolate chips (optional)",
+                amount: null,
+                measurement: "",
+                details: ""
+            }
+        ],
+        suppliesNeeded: [
+            "mixing bowl",
+            "whisk",
+            "loaf pan",
+            "oven"
+        ],
+        steps: [
+            "Preheat oven to 350°F (175°C). Grease and flour a 9x5-inch loaf pan.",
+            "In a large mixing bowl, combine mashed bananas, sugar, oil, plant-based milk, and vanilla extract. Mix until well combined.",
+            "Add flour, baking powder, baking soda, and salt to the wet ingredients. Stir until just combined. Do not overmix.",
+            "Fold in chopped nuts or chocolate chips if desired.",
+            "Pour the batter into the prepared loaf pan and smooth the top with a spatula.",
+            "Bake in the preheated oven for 50-60 minutes, or until a toothpick inserted into the center comes out clean.",
+            "Allow the banana bread to cool in the pan for 10 minutes before transferring it to a wire rack to cool completely."
+        ],
+        notes: []
     }
-]
 
-export const basicTemperatures = [
-    {
-        value: 0,
-        label: '0°F'
-    },
-    {
-        value: 32,
-        label: '32°F'
-    },
-    {
-        value: 100,
-        label: '100°F'
-    },
-    {
-        value: 200,
-        label: '200°F'
-    },
-    {
-        value: 300,
-        label: '300°F'
-    },
-    {
-        value: 400,
-        label: '400°F'
-    },
-    {
-        value: 500,
-        label: '500°F'
-    }
 ]

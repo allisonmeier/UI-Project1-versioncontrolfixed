@@ -1,0 +1,66 @@
+/* GENERAL */
+
+.recipe-container {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black; 
+    padding: 30px;
+    margin: 10px;
+}
+
+.recipe-container-body {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+/* HEADER */
+
+.recipe-title {
+    align-items: center;
+    font-size: 27px; 
+}
+
+/* DIFFICULTY RATING */
+
+.star {
+    font-size: 20px; /* Adjust as needed */
+    margin-right: 5px; /* Adjust as needed */
+}
+
+.star-green {
+    color: green; /* Color for easy difficulty */
+}
+
+.star-yellow {
+    color: yellow; /* Color for moderate difficulty */
+}
+
+.star-red {
+    color: red; /* Color for difficult difficulty */
+}
+
+.recipe-difficulty, .recipe-difficulty-stars {
+    display: flex;
+}
+
+
+/* RECIPE STEPS */
+
+.highlighted {
+    background-color: yellow;
+}
+
+.step-navigation {
+    margin-top: 20px;
+}
+
+.step-navigation button {
+    font-size: 20px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.step-navigation button:hover {
+    background-color: #f0f0f0;
+}
