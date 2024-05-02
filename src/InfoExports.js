@@ -1,9 +1,9 @@
-export const DummyRecipes = () => {
-    [
+
+export const dummyRecipes = [
     /* French Onion Soup */
     {
         title: "French Onion Soup",
-        description: "TODO",
+        description: "A rich and savory soup featuring caramelized onions, beef stock, and melted gruyere cheese.",
         difficulty: "Difficult",
         durationInMinutes: 110,
         ingredientsNeeded: [
@@ -90,7 +90,7 @@ export const DummyRecipes = () => {
     /* Hummus */
     {
         title: "Hummus",
-        description: "TODO",
+        description: "Creamy and flavorful chickpea dip with hints of garlic, lemon, and tahini.",
         difficulty: "Moderate",
         durationInMinutes: 40,
         ingredientsNeeded: [
@@ -181,7 +181,7 @@ export const DummyRecipes = () => {
     /* Baked Chicken Thighs */
     {
         title: "Baked Chicken Thighs",
-        description: "TODO",
+        description: "Tender and juicy chicken thighs seasoned with garlic, onion, and Italian seasoning, baked to perfection.",
         difficulty: "Easy",
         durationInMinutes: 60,
         ingredientsNeeded: [
@@ -251,7 +251,7 @@ export const DummyRecipes = () => {
     /* Chocolate Chip Kale Cookies */
     {
         title: "Chocolate Chip Kale Cookies",
-        description: "TODO",
+        description: "Irresistibly chewy cookies infused with chocolate chips and nutritious kale for a surprising twist.",
         difficulty: "Easy",
         durationInMinutes: 22,
         ingredientsNeeded: [
@@ -326,5 +326,35 @@ export const DummyRecipes = () => {
             "Bake for 12 minutes, and let cool for 10 minutes to firm up texture."
         ]
     }
-  ]
-}
+]
+
+export const basicTemperatures = [
+    {
+        value: 0,
+        label: '0°F'
+    },
+    {
+        value: 32,
+        label: '32°F'
+    },
+    {
+        value: 100,
+        label: '100°F'
+    },
+    {
+        value: 200,
+        label: '200°F'
+    },
+    {
+        value: 300,
+        label: '300°F'
+    },
+    {
+        value: 400,
+        label: '400°F'
+    },
+    {
+        value: 500,
+        label: '500°F'
+    }
+]
