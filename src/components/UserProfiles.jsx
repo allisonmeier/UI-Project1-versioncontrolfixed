@@ -1,55 +1,65 @@
 import "../UserProfiles.css"
 import * as React from 'react'
-import {userProfiles, dummyRecipes, allPossibleIngredients} from '../InfoExports'
-import { FaUser } from 'react-icons/fa'
+import { userProfiles, dummyRecipes, allPossibleIngredients } from '../InfoExports'
 
-class UserProfiles extends React.Component { 
+class UserProfiles extends React.Component {
     constructor(props) {
-        super();
+        super()
         this.state = {
             allUserProfiles: userProfiles,
             currentUserProfile: userProfiles.user1,
-            selectedIngredients: [], // this is what the user has selected as available
         }
     }
 
     handleProfileChange = (selectedProfile) => {
-        this.setState({currentUserProfile: selectedProfile})
+        this.setState({ currentUserProfile: selectedProfile })
+        //console.log(this.state.currentUserProfile.name)
     }
 
     handleIngredientUpdates = (selection) => {
-        const { value } = selection.target;
-        const { currentUserProfile } = this.state;
+        const { value: justClicked } = selection.target
+        const { currentUserProfile } = this.state
 
-        // ACT LIKE AN ARRAY IF YOU'RE AN ARRAY PLEASE!!!
-        const selectedIngredients = Array.isArray(value) ? value : [value]
-    
-        // now hold the stuff I tell you to hold >:(
-        const updatedIngredients = [...this.state.selectedIngredients, ...selectedIngredients]
-
-        this.setState({selectedIngredients: updatedIngredients})
+        // not in list? add it
+        if (!currentUserProfile.ingredients.includes(justClicked)) {
+            currentUserProfile.ingredients.push(justClicked)
+        } 
+        // item already in list & list is just 1 item? empty it
+        // TODO: NOT WORKING CURRENTLY
+        else if (currentUserProfile.ingredients.length == 1) {
+            currentUserProfile.ingredients.length = 0
+        }
+        // item already in list & list > 1 item? remove it
+        else if (currentUserProfile.ingredients.length > 1) {
+            currentUserProfile.ingredients = currentUserProfile.ingredients.filter(item => item !== justClicked)
+        }
     
         this.setState(prevState => ({
             currentUserProfile: {
-                ...currentUserProfile,
-                currentIngredients: updatedIngredients
+                ...prevState.currentUserProfile,
+                user: {
+                    ...prevState.currentUserProfile.user,
+                    ingredients: currentUserProfile.ingredients
+                }
             }
-        }))
-    
-        console.log(this.state.selectedIngredients)
+        }), () => {
+            console.log("Just clicked:", justClicked)
+            console.log("Updated ingredients AT END:", currentUserProfile.ingredients)
+        })
     }
+    
 
     render = () => {
-
+        
         const { currentUserProfile, allUserProfiles } = this.state
 
         return (
             <div className="profile-container">
                 <div className="profile-selecter">
                     {Object.keys(allUserProfiles).map((userKey) => (
-                        <div 
-                            key={userKey} 
-                            className={`profile-icon-${userKey} profile-icon`} 
+                        <div
+                            key={userKey}
+                            className={`profile-icon-${userKey} profile-icon`}
                             onClick={() => this.handleProfileChange(allUserProfiles[userKey])}
                         >
                             <FaUser size={24} /> {/* fyi, this is all the person-shaped icons */}
@@ -72,7 +82,7 @@ class UserProfiles extends React.Component {
                             <p>What do you have?</p>
                             <select
                                 multiple
-                                value={currentUserProfile.currentIngredients}
+                                value={currentUserProfile.ingredients}
                                 onChange={this.handleIngredientUpdates}
                             >
                                 {allPossibleIngredients.map((ingredient, index) => (
@@ -84,7 +94,7 @@ class UserProfiles extends React.Component {
                             <div>
                                 <p>Current Selection:</p>
                                 <ul>
-                                    {this.state.selectedIngredients.map((ingredient, index) => (
+                                    {currentUserProfile.ingredients.map((ingredient, index) => (
                                         <li key={index}>{ingredient}</li>
                                     ))}
                                 </ul>
@@ -93,7 +103,8 @@ class UserProfiles extends React.Component {
                     </div>
                 </div>
             </div>
-        )}
+        )
+    }
 }
 
 export default UserProfiles

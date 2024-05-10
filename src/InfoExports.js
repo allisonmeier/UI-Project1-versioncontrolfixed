@@ -43,25 +43,25 @@ export const userProfiles = {
     user1: {
         name: "Luke Bristoll",
         dietaryRestrictions: [],
-        currentIngredients: [],
+        ingredients: [],
         skillLevel: 'Easy',
     },
     user2: {
         name: "Robbie Schad",
         dietaryRestrictions: ["Dairy-free"],
-        currentIngredients: [],
+        ingredients: [],
         skillLevel: 'Moderate',
     },
     user3: {
         name: "Robin Heft",
         dietaryRestrictions: ["Vegan", "Vegetarian"],
-        currentIngredients: [],
+        ingredients: [],
         skillLevel: 'Moderate',
     },
     user4: {
         name: "Steven Kraine",
         dietaryRestrictions: ["Gluten-Free"],
-        currentIngredients: [],
+        ingredients: [],
         skillLevel: 'Difficult',
     },
 }
