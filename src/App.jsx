@@ -32,7 +32,7 @@ class App extends React.Component {
               <p className="project-title">Project 1: Smart Cookbook</p>
               <p className="my-name">Allison Meier</p>
               <div className="external-links">
-                <a href="https://github.com/allisonmeier/UI-Project1" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/allisonmeier/UI-Project1-versioncontrolfixed" target="_blank" rel="noopener noreferrer">
                   Github Repo
                 </a>
                 &nbsp;&nbsp;&nbsp; {/* add some space, stop sticking together */}
