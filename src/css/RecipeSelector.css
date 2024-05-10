@@ -1,0 +1,27 @@
+/* GENERAL */
+
+.selector-container {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black; 
+    padding: 30px;
+    margin: 10px;
+}
+
+.selector-container-body {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+/* HEADER */
+
+.selector-title {
+    align-items: center;
+    font-size: 20px; 
+}
+
+.selector-instructions, 
+.selector-filter {
+    align-items: center;
+    font-size: 12px;   
+}

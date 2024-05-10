@@ -1,4 +1,4 @@
-import "../UserProfiles.css"
+import "../css/UserProfiles.css"
 import * as React from 'react'
 import { userProfiles, dummyRecipes, allPossibleIngredients } from '../InfoExports'
 import { FaUser } from 'react-icons/fa'
@@ -51,7 +51,7 @@ class UserProfiles extends React.Component {
     
 
     render = () => {
-        
+
         const { currentUserProfile, allUserProfiles } = this.state
 
         return (

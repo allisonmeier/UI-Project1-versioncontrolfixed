@@ -5,7 +5,8 @@
 
 .TemperatureGauge,
 .RecipeDisplay,
-.UserProfiles {
+.UserProfiles,
+.RecipeSelector {
     flex-grow: 1;
     min-width: 0;
     border: 1px solid #ccc;
