@@ -11,7 +11,7 @@ export const basicTemperatures = [
     {
         value: 0,
         label: '0°F'
-    },
+    },/*
     {
         value: 32,
         label: '32°F'
@@ -23,15 +23,15 @@ export const basicTemperatures = [
     {
         value: 200,
         label: '200°F'
-    },
+    },*/
     {
         value: 300,
         label: '300°F'
-    },
+    },/*
     {
         value: 400,
         label: '400°F'
-    },
+    },*/
     {
         value: 500,
         label: '500°F'
