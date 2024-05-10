@@ -1,6 +1,7 @@
 import "../UserProfiles.css"
 import * as React from 'react'
 import { userProfiles, dummyRecipes, allPossibleIngredients } from '../InfoExports'
+import { FaUser } from 'react-icons/fa'
 
 class UserProfiles extends React.Component {
     constructor(props) {
