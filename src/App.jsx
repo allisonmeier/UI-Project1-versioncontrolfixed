@@ -4,10 +4,27 @@ import TemperatureGauge from './components/TemperatureGauge';
 import RecipeDisplay from './components/RecipeDisplay';
 import UserProfiles from './components/UserProfiles';
 import RecipeSelector from './components/RecipeSelector';
+import { dummyRecipes } from './InfoExports';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        selectedRecipe: null, 
+        selectedUserProfile: null
+    }
+  }
+
+  handleSelectUserProfile = (userProfile) => {
+    this.setState({ selectedUserProfile: userProfile });
+  }
+
+  handleRecipeSelect = (recipe) => {
+    this.setState({ selectedRecipe: recipe })
+  }
 
     render() {
+      const { selectedRecipe, selectedUserProfile } = this.state
 
       return (
         <div className="app-container">
@@ -27,13 +44,17 @@ class App extends React.Component {
           <div className='content-wrapper'>
             <div className="left-column">
               <TemperatureGauge />
-              <RecipeSelector/>
+              <RecipeSelector 
+                recipes={dummyRecipes} 
+                onSelectRecipe={this.handleRecipeSelect}
+                selectedUserProfile={selectedUserProfile}
+               />
             </div>
             <div className="middle-column">
-              <RecipeDisplay />
+              <RecipeDisplay currentRecipe={selectedRecipe} />
             </div>
             <div className="right-column">
-              <UserProfiles />
+              <UserProfiles onSelectUserProfile={this.handleSelectUserProfile} />
             </div>
           </div>
         </div>

@@ -13,13 +13,6 @@ class RecipeDisplay extends React.Component {
         }
     }
 
-    // filter and return only the recipes that relate to what we're looking for 
-    getFilteredRecipes = () => {
-        // later on, this will hopefully help with filtering
-        const recipes = dummyRecipes
-        return recipes[0]
-    }
-
     // handle clicking "previous step" button
     handlePreviousRecipeStep = () => {
         this.setState(prevState => ({

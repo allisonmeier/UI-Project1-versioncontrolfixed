@@ -8,11 +8,6 @@
     margin: 10px;
 }
 
-.selector-container-body {
-    max-height: 400px; 
-    overflow-y: auto;
-}
-
 /* HEADER */
 
 .selector-title {
@@ -20,8 +15,42 @@
     font-size: 20px; 
 }
 
-.selector-instructions, 
+.selector-instructions {
+    align-items: center;
+    font-size: 12px;   
+}
+
 .selector-filter {
     align-items: center;
     font-size: 12px;   
+}
+
+/* BODY */
+
+.selector-container-body {
+    height: 100px;
+    overflow-y: auto;
+    background-color: #e0e0e0;
+}
+
+.recipe-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+.recipe-list li {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.recipe-list li.selected {
+    background-color: #f0f0f0;
+}
+
+.column-contents {
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
 }
